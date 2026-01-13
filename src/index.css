@@ -5,10 +5,10 @@
 @tailwind utilities;
 
 :root {
-  --primary-bg: #FFF9F6;
-  --secondary-bg: #FADCD9;
-  --tertiary-bg: #EEDDD3;
-  --text-color: #111827;
+  --primary-bg: #ECEFF1;     /* soft warm grey */
+  --secondary-bg: #DDE1E4;   /* muted grey */
+  --tertiary-bg: #C9CDD2;    /* deeper grey */
+  --text-color: #1F2933;     /* charcoal text */
 }
 
 html {
@@ -16,31 +16,25 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-color);
+  background-color: var(--primary-bg);
 }
 
 @keyframes slide {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-100%);
-  }
-  50% {
-    transform: translateY(-200%);
-  }
-  75% {
-    transform: translateY(-300%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-100%); }
+  50% { transform: translateY(-200%); }
+  75% { transform: translateY(-300%); }
+  100% { transform: translateY(0); }
 }
 
 .animate-slide {
   animation: slide 8s infinite;
 }
 
+/* Typography */
 .custom-hero-h1 {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
@@ -69,27 +63,34 @@ body {
   line-height: 1.1;
 }
 
+/* Preloader */
 .preloader-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #EEDDD3 0%, #FADCD9 100%);
+  background: linear-gradient(
+    135deg,
+    #C9CDD2 0%,
+    #E0E3E6 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
 
+/* Minecraft Loader */
 .mc-title {
   font-family: 'Minecraftia', 'Press Start 2P', monospace;
-  color: #fff;
+  color: #FFFFFF;
   font-size: 1.1rem;
   letter-spacing: 0.04em;
   margin-bottom: 10px;
   text-shadow: 1px 1px 0 #000, 2px 2px 0 #3e3e3e;
 }
+
 .mc-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -97,35 +98,40 @@ body {
   gap: 2px;
   width: 180px;
   height: 180px;
-  background: #222;
-  border: 2px solid #444;
+  background: #1E1E1E;
+  border: 2px solid #3A3A3A;
   border-radius: 6px;
-  box-shadow: 0 1px 0 #fff2 inset;
+  box-shadow: inset 0 1px 0 #FFFFFF14;
   margin-bottom: 10px;
 }
+
 .mc-cell {
   width: 16px;
   height: 16px;
-  background: #181818;
+  background: #151515;
   border-radius: 2px;
-  border: 1.2px solid #333;
-  box-shadow: 0 1px 0 #fff2 inset;
-  transition: background 0.18s cubic-bezier(0.4,0,0.2,1), box-shadow 0.18s;
+  border: 1.2px solid #2E2E2E;
+  box-shadow: inset 0 1px 0 #FFFFFF14;
+  transition: background 0.18s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.18s;
 }
+
 .mc-cell.filled {
-  background: linear-gradient(145deg, #7ec850 60%, #b6e16b 100%);
-  box-shadow: 0 0 8px #7ec85099, 0 1px 0 #fff2 inset;
-  border-color: #5e8d3c;
+  background: linear-gradient(145deg, #7EC850 60%, #B6E16B 100%);
+  box-shadow: 0 0 8px #7EC85099, inset 0 1px 0 #FFFFFF14;
+  border-color: #5E8D3C;
 }
+
 .mc-progress-label {
   font-family: 'Minecraftia', 'Press Start 2P', monospace;
-  color: #b6e16b;
+  color: #B6E16B;
   font-size: 1.1rem;
   letter-spacing: 0.04em;
   text-shadow: 1px 1px 0 #000, 2px 2px 0 #3e3e3e;
   margin-top: 2px;
 }
 
+/* Apple Loader */
 .apple-logo {
   margin-bottom: 32px;
 }
@@ -133,7 +139,7 @@ body {
 .apple-loading-bar {
   width: 120px;
   height: 8px;
-  background: #000000;
+  background: #1C1C1C;
   border-radius: 4px;
   overflow: hidden;
   margin-top: 16px;
@@ -143,7 +149,7 @@ body {
 .apple-loading-bar-inner {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #333 0%, #888 100%);
+  background: linear-gradient(90deg, #6B7280 0%, #9CA3AF 100%);
   border-radius: 4px;
   animation: apple-bar-load 2.5s cubic-bezier(0.4,0,0.2,1) infinite;
 }
@@ -156,13 +162,10 @@ body {
   100% { width: 0%; opacity: 0.7; }
 }
 
+/* Exit Animations */
 @keyframes slideUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
 }
 
 @keyframes fadeOut {
