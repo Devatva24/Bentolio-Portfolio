@@ -1,3 +1,4 @@
+![WIP](https://img.shields.io/badge/Status-Work%20In%20Progress-yellow?style=for-the-badge)
 # 🎨 Bentolio Portfolio
 
 A modern, bento-grid style portfolio website built with React, TypeScript, and Tailwind CSS. Features a clean, responsive design with smooth animations and an elegant UI.
